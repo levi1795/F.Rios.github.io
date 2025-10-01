@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Liz</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      background: url('https://source.unsplash.com/1600x900/?galaxy,stars') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    /* 💓 Nombre central */
+    .name {
+      font-size: 4em;
+      font-weight: bold;
+      color: #ff6fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff6fff, 0 0 40px #ff1493;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* 🔄 Palabras en órbita */
+    .orbit {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      top: -50px;
+      left: -50px;
+      animation: rotateOrbit 12s linear infinite;
+    }
+
+    .orbit div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3em;
+      color: #ff6fff;
+      text-shadow: 0 0 5px #fff, 0 0 15px #ff6fff;
+    }
+
+    .orbit div:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(150px); }
+    .orbit div:nth-child(2) { transform: translate(-50%, -50%) rotate(72deg) translateX(150px); }
+    .orbit div:nth-child(3) { transform: translate(-50%, -50%) rotate(144deg) translateX(150px); }
+    .orbit div:nth-child(4) { transform: translate(-50%, -50%) rotate(216deg) translateX(150px); }
+    .orbit div:nth-child(5) { transform: translate(-50%, -50%) rotate(288deg) translateX(150px); }
+
+    @keyframes rotateOrbit {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 💖 Frase romántica */
+    .phrase {
+      margin-top: 350px;
+      font-size: 1.5em;
+      color: #ffd6ff;
+      text-shadow: 0 0 8px #fff, 0 0 15px #ff6fff;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { opacity: 0.8; }
+      50% { opacity: 1; text-shadow: 0 0 15px #fff, 0 0 30px #ff1493; }
+      100% { opacity: 0.8; }
+    }
+
+    /* 🌠 Estrellas fugaces con la frase my girl */
+    .shooting-star {
+      position: absolute;
+      top: -50px;
+      left: -100px;
+      font-size: 1.2em;
+      color: #ff69b4;
+      white-space: nowrap;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff6fff, 0 0 40px #ff1493;
+      animation: shooting 5s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes shooting {
+      0% {
+        transform: translate(0,0) rotate(-20deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      50% {
+        transform: translate(800px, 400px) rotate(-20deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(1200px, 600px) rotate(-20deg);
+        opacity: 0;
+      }
+    }
+
+    /* Varias estrellas con diferentes delays */
+    .shooting-star:nth-child(1) { animation-delay: 2s; }
+    .shooting-star:nth-child(2) { animation-delay: 6s; }
+    .shooting-star:nth-child(3) { animation-delay: 10s; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 🌹 Nombre -->
+  <div class="name">Liz</div>
+
+  <!-- 🔄 Palabras orbitando -->
+  <div class="orbit">
+    <div>Te amo</div>
+    <div>Mi vida</div>
+    <div>Mi amor</div>
+    <div>Te quiero</div>
+    <div>Mi princesa</div>
+    <div>Mi amor</div>
+  </div>
+
+  <!-- 💖 Frase romántica -->
+  <div class="phrase">My only love, my life, my sky 💖</div>
+</div>
+
+<!-- 🌠 Estrellas fugaces (texto "my girl") -->
+<div class="shooting-star">my girl</div>
+<div class="shooting-star">my girl</div>
+<div class="shooting-star">my girl</div>
+
+</body>
+</html>
